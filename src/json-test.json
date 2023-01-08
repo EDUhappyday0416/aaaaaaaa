@@ -1,0 +1,30 @@
+[{
+    "name": "麻辣鴨血糕",
+    "description": "這道菜是以鴨血和麻辣醬為主要食材，味道麻辣。",
+    "image": "https://i.imgur.com/pDHXLrY.jpg",
+    "ingredients": ["鴨血", "粉絲", "麻辣醬", "蒜頭", "蔥"],
+    "price": 25,
+    "review": "這道菜的鴨血酥脆口感非常棒，麻辣醬的味道也很搭。"
+},
+{
+    "name": "排骨酥肉",
+    "description": "這道菜是以排骨和酥肉為主要食材，味道香辣。",
+    "image": "https://i.imgur.com/YJYrGgC.jpg",
+    "ingredients": ["排骨", "酥肉", "蒜頭", "蔥", "五香粉"],
+    "price": 30,
+    "review": "這道菜的排骨軟嫩多汁，酥肉的香脆口感很棒。"
+    },{
+        "name": "肉末茄子",
+        "description": "這道菜是以肉末和茄子為主要食材，味道香辣。",
+        "image": "https://i.imgur.com/LAR4DVu.jpg",
+        "ingredients": ["肉末", "茄子", "蒜頭", "蔥", "番茄醬"],
+        "price": 25,
+        "review": "這道菜的肉末肉質鮮嫩，茄子香甜可口。"
+        },{
+            "name": "滑蛋肉絲麵",
+            "description": "這道菜是以肉絲和滑蛋為主要食材，配上清淡的麵條，味道和清新。",
+            "image": "https://i.imgur.com/P8XEtQQ.jpg",
+            "ingredients": ["麵條", "肉絲", "蛋", "蔥", "蒜頭"],
+            "price": 20,
+            "review": "這道菜的滑蛋很香，肉絲也很嫩，配上麵條很清爽。"
+            }]

@@ -6,14 +6,19 @@
 
 // Components
 import App from './App.vue'
-
 // Composables
 import { createApp } from 'vue'
+
+import VueCarousel from 'vue-carousel';
+
 
 // Plugins
 import { registerPlugins } from '@/plugins'
 
-const app = createApp(App)
+import store from './store'
+
+const app = createApp(App).use(store).use(VueCarousel)
+
 
 registerPlugins(app)
 
