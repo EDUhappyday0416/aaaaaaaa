@@ -6,6 +6,7 @@
       @click:append-inner="sendMessage"
       :type="type"
       :variant="solo"
+      :placeholder="Placeholder"
     ></v-text-field>
   </div>
 </template>
@@ -27,6 +28,9 @@ export default {
     solo: {
       type: String,
       default: "solo",
+    },
+    Placeholder: {
+      type: String,
     },
   },
   computed: {},

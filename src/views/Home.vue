@@ -1,13 +1,14 @@
 <template>
   <div class="home">
-    <div class="home_title">Check Your email</div>
-    <div class="home_content">We.ve sent the code to your email</div>
+    <DefaultBar />
+    <div class="home_title">Phone Verification</div>
+    <div class="home_content">Enter your OPT code here</div>
     <div class="input_class">
       <div class="input_item" v-for="(item, i) in fieldArr" :key="i">
         <v-text-field
           maxlength="1"
           variant="solo"
-          ref="fieldArr"
+          ref="inputs"
           @keyup="changeValue($event, i)"
         ></v-text-field>
       </div>
@@ -22,10 +23,11 @@
         block
         variant="flat"
         rounded="pill"
-        color="#1fcc7a"
+        color="#f93963"
         class="py-6 my-4"
+        @click="goPath"
       >
-        <span class="text-white-darken-2" @click="goPath">Verify</span>
+        <span class="text-white-darken-2">Verify</span>
       </v-btn>
       <v-btn block variant="outlined" rounded="pill" class="my-2 py-6">
         Send Again
@@ -35,23 +37,28 @@
 </template>
 
 <script>
+// import { mapState } from "vuex";
+// import { mapState } from 'vuex'
+import DefaultBar from "@/layouts/default/AppBar.vue";
 export default {
   name: "Home",
-  components: {},
+  components: {
+    DefaultBar,
+  },
   data() {
     return {
-      fieldArr: [, , , ,],
+      fieldArr: ["", "", "", ""],
       now: NaN,
       time: 300000,
       focused: false,
     };
   },
   computed: {
-    // 结束时间
+    // ...mapState("products", ["all"]),
     finishTime() {
       return Date.now() + this.time;
     },
-    //剩余的毫秒数
+
     countdown() {
       return Math.max(0, this.finishTime - this.now);
     },
@@ -88,21 +95,23 @@ export default {
   watch: {
     countdown(countdown) {
       if (0 === countdown) {
-        alert("时间到了");
+        alert("時間到");
       }
     },
   },
   mounted() {},
   methods: {
     goPath() {
-      this.$router.push("login");
+      this.$router.push("/login");
     },
-
     changeValue(e, i) {
-      this.$nextTick(() => {
-        this.$refs.fieldArr[i + 1].focus();
-        this.focused = true;
-      });
+      if (e.keyCode >= 48 && e.keyCode <= 57) {
+        if (i === this.fieldArr.length - 1) return;
+        this.$refs.inputs[i + 1].focus();
+      } else {
+        e.preventdefault();
+        return false;
+      }
     },
   },
 };
@@ -131,6 +140,9 @@ export default {
 }
 .input_item {
   margin: 10px;
+}
+
+.input_item {
 }
 .input_class input {
   text-align: center;
